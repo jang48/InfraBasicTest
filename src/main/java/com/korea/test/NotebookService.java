@@ -32,4 +32,9 @@ public class NotebookService {
 
         return notebookRepository.save(notebook);
     }
+
+    public void delete(Long id){
+        Notebook notebook = this.notebookRepository.findById(id).get();
+        this.notebookRepository.delete(notebook);
+    }
 }
